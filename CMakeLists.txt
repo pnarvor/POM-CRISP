@@ -22,7 +22,7 @@ find_package(infuse_pom_base REQUIRED )
 
 ###
 # Define options
-option (WITH_ASN1 "Compile the ASN.1 Wrapper of pom-crisp" TRUE)
+option (WITH_ASN1 "Compile the ASN.1 Wrapper of pom-crisp" ON)
 
 ####
 # If the ASN.1 wrapper is enabled
@@ -79,7 +79,7 @@ else()
     
     add_library(${PROJECT_NAME} SHARED ${SOURCES})
     target_include_directories(${PROJECT_NAME} PRIVATE include/)
-    target_link_libraries (${PROJECT_NAME} infuse_envire infuse_pom_base)
+    target_link_libraries (${PROJECT_NAME} infuse_pom_base)
     set_target_properties (${PROJECT_NAME}
         PROPERTIES
             VERSION ${PROJECT_VERSION}
